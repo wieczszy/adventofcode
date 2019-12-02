@@ -1,5 +1,5 @@
 def calc_fuel(mass):
-    return int(mass / 3) - 2
+    return mass // 3 - 2
 
 total_fuel = 0
 
@@ -7,7 +7,6 @@ with open('data/day_1.csv', 'r') as f:
     modules = [int(line) for line in f]
 
 modules_fuel = sum([calc_fuel(module) for module in modules])
-print(modules_fuel)
 
 for module in modules:
     base_fuel = calc_fuel(module)
@@ -24,4 +23,5 @@ for module in modules:
 
     total_fuel += base_fuel + additional_fuel
 
+print(modules_fuel)
 print(total_fuel)
