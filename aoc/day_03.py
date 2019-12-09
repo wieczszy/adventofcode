@@ -1,4 +1,4 @@
-w1, w2, _ = open('data/day_03.csv', 'r').read().split('\n')'
+w1, w2, _ = open('data/day_03.csv', 'r').read().split('\n')
 
 x_axis = {'R': 1, 'L': -1, 'U': 0, 'D': 0}
 y_axis = {'R': 0, 'L': 0, 'U': 1, 'D': -1}
