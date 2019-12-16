@@ -1,4 +1,4 @@
-def compute(program, input_value):
+def compute(input_program, input_value):
     program = input_program.copy()
     i = 0
     r = []
