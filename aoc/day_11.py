@@ -67,7 +67,7 @@ if __name__ == '__main__':
 
     ### PART 2 ###
     c = Computer(program)
-    r = Robot(101, 101, start_color=1)
+    r = Robot(101, 21, start_color=1)
 
     while c.state:
         pin = r.get_position()
