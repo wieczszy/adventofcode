@@ -4,9 +4,9 @@ def solve1(inputfile):
         p1, p2 = line[: len(line) / 2], line[len(line) / 2 :]
         for x in list(set(p1).intersection(p2)):
             if x.islower():
-                t += ord(x) - 96
+                t += ord(x) - ord('a') + 1
             else:
-                t += ord(x) - 38
+                t += ord(x) - ord('A') + 27
     return t
 
 
@@ -15,11 +15,11 @@ def solve2(inputfile):
     inn = open(inputfile, "r").read().splitlines()
     for i in range(0, len(inn), 3):
         g = inn[i : i + 3]
-        c = list(set(g[0]).intersection(g[1], g[2]))[0]
-        if c.islower():
-            t += ord(c) - 96
+        x, = set(g[0]).intersection(g[1], g[2])
+        if x.islower():
+            t += ord(x) - ord('a') + 1
         else:
-            t += ord(c) - 38
+            t += ord(x) - ord('A') + 27
     return t
 
 
