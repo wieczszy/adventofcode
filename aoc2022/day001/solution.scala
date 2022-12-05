@@ -2,17 +2,20 @@
     import scala.io.Source
     import scala.math.Ordering
 
-    def solve1(inputfile: String): Int =
+    def parseInput(inputfile: String): Array[Array[Int]] =
         val inn = Source.fromFile(inputfile).mkString
-        val I = inn.split("\n\n").map(_.split("\n").map(_.toInt))
-        val sums = I.map(_.sum)
-        sums.max
+        inn.split("\n\n").map(_.split("\n").map(_.toInt))
+
+    def solve1(inputfile: String): Int =
+        val I = parseInput(inputfile)
+        I.map(_.sum).max
 
     def solve2(inputfile: String): Int =
-        val inn = Source.fromFile(inputfile).mkString
-        val I = inn.split("\n\n").map(_.split("\n").map(_.toInt))
-        val sums = I.map(_.sum).sorted(Ordering.Int.reverse)
-        sums.take(3).sum
+        val I = parseInput(inputfile)
+        I.map(_.sum)
+            .sorted(Ordering.Int.reverse)
+            .take(3)
+            .sum
 
     val test = "test.txt"
     val input = "input.txt"
