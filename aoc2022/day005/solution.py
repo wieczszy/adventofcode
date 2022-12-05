@@ -6,7 +6,7 @@ def solve1(inputfile):
     inn = inn.split("\n\n")
     S = inn[0].split("\n")
     stacks = {int(x): [] for x in S[-1].split()}
-    S = S[:-1]
+    S.pop()
 
     for s in S:
         s = (
