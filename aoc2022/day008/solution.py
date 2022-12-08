@@ -9,7 +9,7 @@ def solve1(inputfile):
         for j in range(len(grid[i])):
             if i == 0 or i == len(grid) - 1:
                 top, bot, left, right = 1, 1, 1, 1
-            elif j == 0 or j == len(grid[0]) - 1:
+            elif j == 0 or j == len(grid[i]) - 1:
                 top, bot, left, right = 1, 1, 1, 1
             else:
                 top, bot, left, right = 0, 0, 0, 0
