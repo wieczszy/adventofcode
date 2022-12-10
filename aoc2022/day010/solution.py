@@ -19,17 +19,14 @@ def solve1(inputfile):
 
 
 def solve2(inputfile):
-    # 40 x 6 screen, sprite 3 px, X == middle
-    # 1 pixel per cycle
-    crt = [[" " for _ in range(40)] for _ in range(6)]
-    C = 0
+    crt = [["  " for _ in range(40)] for _ in range(6)]
     X = 1
     x, y = 0, 0
 
     for line in open(inputfile, "r").read().splitlines():
         if line == "noop":
             if y >= X - 1 and y <= X + 1:
-                crt[x][y] = "▊"
+                crt[x][y] = "▊▊"
             if y == 39:
                 x += 1
                 y = 0
@@ -38,7 +35,7 @@ def solve2(inputfile):
         else:
             for _ in range(2):
                 if y >= X - 1 and y <= X + 1:
-                    crt[x][y] = "▊"
+                    crt[x][y] = "▊▊"
                 if y == 39:
                     x += 1
                     y = 0
